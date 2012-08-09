@@ -22,7 +22,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Lingua::EN::VerbTense",
   "PREREQ_PM" => {},
-  "VERSION" => "3.001",
+  "VERSION" => "3.002",
   "test" => {
     "TESTS" => "t/*.t"
   }
