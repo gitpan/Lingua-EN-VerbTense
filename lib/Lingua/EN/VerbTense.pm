@@ -1,4 +1,3 @@
-#!/usr/bin/perl
 ###################################
 #
 # Parse (v3) Parses English verb structures.
@@ -58,7 +57,7 @@ qw(verb verb_tense sFormPartInf sInfPartForm sIsModal sIsInfinitive sIsThird sIs
 
 @EXPORT = qw(verb_tense);
 
-$VERSION = '3.00';
+$VERSION = '3.01';
 
 use strict;    
 
@@ -1264,7 +1263,7 @@ Linga::EN::VerbTense - Parses verb structures into modal, tense, & infinitive.
 	#   $modality='Subjective Ability', $tense='Perfect', $inf='do'
 
 =head1 DESCRIPTION	
-	
+
 This is a simple Perl module designed to parse english verb structures
 using a finite state machine into the verb tense and infinitive, as well
 as the type of infinitive in the structure. This was originally written
@@ -1275,7 +1274,7 @@ multiple tweaks and twists, POD docs, and CPAN packaging.
 
 Exported by default:
 	verb_tense
-	
+
 Tags:
 	all =>
 		verb 
@@ -1314,6 +1313,8 @@ OK for export:
 	sIsPart		
 
 =head1 FUNCTIONS
+
+=over 4 
 
 =item verb_tense($string);
 
@@ -1358,7 +1359,7 @@ following:
 
 Example:
 	$string = sInfPartForm("go","Gerund");
-	
+
 Returns "going".
 
 =item sIsModal($verb);
@@ -1377,6 +1378,8 @@ Each of these functions tests for its namesake. E.g. sIsModal($verb) tests if $v
 is a modal. If $verb is a modal, it returns "Modal", else it returns "" (not undef.) 
 The same logic follows for the other five functions.
 
+=back
+
 =head1 EXAMPLE
 
     use Lingua::EN::VerbTense;
@@ -1388,7 +1391,7 @@ The same logic follows for the other five functions.
         my ($Modality, $Tense, $Inf) = verb_tense($_);
 		print "modality = $Modality, tense = $Tense, inf = $Inf\n: ";
 	}
-	
+
 This example allows you to enter a string to parse and it displays
 the results of the parse. Type 'q' to quit the loop.
 
@@ -1399,8 +1402,9 @@ chris@mytechs.com
 1143 5th Street East
 Altoona, WI 54720
 
-Edited and enhanced by Josiah Bryan
-jdb@wcoil.com
+Edited and enhanced by Josiah Bryan jbryan@cpan.org>
+
+Repackaged by John Napiorkowski jjnapiork@cpan.org
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -1410,10 +1414,5 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
-=DOWNLOAD
-
-You may download the latest version of this package at the following URL:
-http://www.josiah.countystart.com/modules/get.pl?verb_tense:POD
 
 =cut
